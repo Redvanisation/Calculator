@@ -1,21 +1,16 @@
 /* eslint-disable react/jsx-filename-extension */
 /* eslint-disable react/prefer-stateless-function */
-import React, { Component } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
+import Display from './Display';
+import ButtonPanel from './ButtonPanel';
 import './main.css';
 
 
-class HelloWorld extends Component {
-  render() {
-    return (
-      <div className="title">
-        <h1>Hello World!</h1>
-      </div>
-    );
-  }
-}
-
 ReactDOM.render(
-  <HelloWorld />,
+  <div id="container">
+    <Display />
+    <ButtonPanel />
+  </div>,
   document.querySelector('#root'),
 );
