@@ -1,5 +1,6 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 
-const Button = () => <button type="button">Button Component</button>;
+const Button = ({ name = 'Button' }) => <button type="button">{name}</button>;
 
 export default Button;

@@ -1,16 +1,18 @@
-/* eslint-disable react/jsx-filename-extension */
 /* eslint-disable react/prefer-stateless-function */
-import React from 'react';
-import ReactDOM from 'react-dom';
+/* eslint-disable react/prop-types */
+import React, { Component } from 'react';
 import Display from './Display';
 import ButtonPanel from './ButtonPanel';
-import './main.css';
 
+class App extends Component {
+  render() {
+    return (
+      <div id="container">
+        <Display result="0" />
+        <ButtonPanel />
+      </div>
+    );
+  }
+}
 
-ReactDOM.render(
-  <div id="container">
-    <Display />
-    <ButtonPanel />
-  </div>,
-  document.querySelector('#root'),
-);
+export default App;
