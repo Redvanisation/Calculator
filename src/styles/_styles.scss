@@ -1,0 +1,70 @@
+*,
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.calculator {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 700px;
+  margin: 5rem auto;
+  box-shadow: 0 1px 5px 1px rgba($color-black, .2);
+  
+  &__display {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    height: 100px;
+    background-color: $color-gray;
+    color: $color-white;
+    font-weight: bold;
+    width: 100%;
+    padding: 2rem;
+
+    &--result {
+      font-size: 2rem;
+    }
+  }
+
+  &__panel {
+    width: 100%;
+
+    &--buttonsRow {
+      display: flex;
+      width: 100%;
+      height: 100px;
+    }
+  }
+  
+  
+  &__button {
+    width: calc(100% / 4);
+    background-color: $color-orange;
+    color: $color-black;
+    text-align: center;
+    outline: none;
+    font-size: 1.2rem;
+    border: 1px solid $color-gray-border;
+    transition: all .2s;
+
+    &:active {
+      background-color: $color-orange-active;
+    }
+  }
+}
+
+.button-gray {
+  background-color: $color-light-gray;
+}
+
+.button-gray:active {
+  background-color: $color-gray-border;
+}
+
+.zero {
+  width: 50% !important;
+}

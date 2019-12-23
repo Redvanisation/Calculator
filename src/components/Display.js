@@ -2,7 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 
-const Display = ({ result = '0' }) => <p>{result}</p>;
+const Display = ({ result = '0' }) => (
+  <p className="calculator__display">
+    <span className="calculator__display--result">{result}</span>
+  </p>
+);
 
 Display.defaultProps = {
   result: '0',
