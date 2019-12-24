@@ -11,17 +11,14 @@ const ButtonPanel = () => (
   <div className="calculator__panel">
     {values.map(value => (
       <div key={value} className="calculator__panel--buttonsRow">
-        {value.map((val) => {
-          let colors;
-          let wide = '';
-          if (value.indexOf(val) === value.length - 1) {
-            colors = 'orange';
-          } else {
-            colors = 'gray';
-          }
-          wide = val === '0' ? wide = true : false;
-          return <Button key={val} buttonName={val} color={colors} wide={wide} />;
-        })}
+        {value.map((val) => (
+          <Button
+            key={val}
+            buttonName={val}
+            color={value.indexOf(val) === value.length - 1 ? 'orange' : 'gray'}
+            wide={val === '0'}
+          />
+        ))}
       </div>
     ))}
   </div>
