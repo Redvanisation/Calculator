@@ -1,7 +1,5 @@
 /* eslint-disable consistent-return */
 /* eslint-disable no-fallthrough */
-/* eslint-disable no-unused-vars */
-/* eslint-disable default-case */
 import operate from './operate';
 
 const calculate = (calData, buttonName) => {
