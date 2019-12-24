@@ -24,4 +24,5 @@ const calculate = (calData, buttonName) => {
   }
 };
 
+
 export default calculate;
