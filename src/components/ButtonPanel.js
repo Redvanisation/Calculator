@@ -8,7 +8,7 @@ const values = [['AC', '+/-', '%', '/'], ['7', '8', '9', 'X'],
 
 const ButtonPanel = () => (
   <div className="calculator__panel">
-    {values.map((value) => (
+    {values.map(value => (
       <div key={value} className="calculator__panel--buttonsRow">
         {value.map((val) => {
           let colors;
