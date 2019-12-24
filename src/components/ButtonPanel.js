@@ -4,38 +4,38 @@ import Button from './Button';
 
 const ButtonPanel = () => {
   return (
-    <div>
-      <div id="group-1">
-        <Button buttonName="AC" />
-        <Button buttonName="+/-" />
-        <Button buttonName="%" />
+    <div className="calculator__panel">
+      <div id="group-1" className="calculator__panel--buttonsRow">
+        <Button buttonName="AC" color="gray" />
+        <Button buttonName="+/-" color="gray" />
+        <Button buttonName="%" color="gray" />
         <Button buttonName="/" />
       </div>
 
-      <div id="group-2">
-        <Button buttonName="7" />
-        <Button buttonName="8" />
-        <Button buttonName="9" />
+      <div id="group-2" className="calculator__panel--buttonsRow">
+        <Button buttonName="7" color="gray" />
+        <Button buttonName="8" color="gray" />
+        <Button buttonName="9" color="gray" />
         <Button buttonName="X" />
       </div>
 
-      <div id="group-3">
-        <Button buttonName="4" />
-        <Button buttonName="5" />
-        <Button buttonName="6" />
+      <div id="group-3" className="calculator__panel--buttonsRow">
+        <Button buttonName="4" color="gray" />
+        <Button buttonName="5" color="gray" />
+        <Button buttonName="6" color="gray" />
         <Button buttonName="-" />
       </div>
 
-      <div id="group-4">
-        <Button buttonName="1" />
-        <Button buttonName="2" />
-        <Button buttonName="3" />
+      <div id="group-4" className="calculator__panel--buttonsRow">
+        <Button buttonName="1" color="gray" />
+        <Button buttonName="2" color="gray" />
+        <Button buttonName="3" color="gray" />
         <Button buttonName="+" />
       </div>
 
-      <div id="group-5">
-        <Button buttonName="0" />
-        <Button buttonName="." />
+      <div id="group-5" className="calculator__panel--buttonsRow">
+        <Button buttonName="0" color="gray" wide />
+        <Button buttonName="." color="gray" />
         <Button buttonName="=" />
       </div>
     </div>
