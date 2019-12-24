@@ -1,5 +1,3 @@
-/* eslint-disable consistent-return */
-/* eslint-disable no-alert */
 /* eslint-disable import/no-extraneous-dependencies */
 const Big = require('big.js');
 
@@ -15,12 +13,14 @@ const operate = (numberOne, numberTwo, operation) => {
     case 'x':
       return num1.times(num2).toString();
     case '/':
+      if (num2 === 0) {
+        return "Division by 0 isn't permissible";
+      }
       return num1.div(num2).toString();
     case '%':
       return num1.mod(num2).toString();
     default:
-      alert('Wrong operation!');
-      break;
+      return 'Wrong operation!';
   }
 };
 

@@ -1,27 +1,30 @@
-/* eslint-disable no-return-assign */
-/* eslint-disable consistent-return */
 import operate from './operate';
 
 const calculate = (calData, buttonName) => {
   let { total, next, operation } = calData;
+  let result;
+  const states = { total, next, operation };
 
   switch (buttonName) {
     case '+/-':
       total = -total;
       next = -next;
       operation = buttonName;
-      break;
+      return total;
     case 'AC':
       total = 0;
-      break;
+      return total;
     case '.':
       if (next) {
-        return total = [total, '.', next].join('');
+        result = [total, '.', next].join('');
+        return result;
       }
       break;
     default:
-      return operate(total, next, operation);
+      result = operate(total, next, operation);
+      return result;
   }
+  return states;
 };
 
 
