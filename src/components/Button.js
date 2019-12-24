@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Button = ({ buttonName = 'Button', color, wide }) => {
+const Button = ({ btnName = 'Button', color, wide, clickHandler, buttonName }) => {
   let theClass = 'calculator__button';
   if (color !== 'orange') {
     theClass = 'calculator__button button-gray';
@@ -9,24 +9,30 @@ const Button = ({ buttonName = 'Button', color, wide }) => {
   if (wide) {
     theClass = 'calculator__button button-gray zero';
   }
+  const handleClick = (buttonName) => {
+    clickHandler(buttonName);
+    // console.log(buttonName);
+  };
+
   return (
     <button
       type="button"
       className={theClass}
+      onClick={handleClick}
     >
-      {buttonName}
+      {btnName}
     </button>
   );
 };
 
 Button.defaultProps = {
-  buttonName: 'button',
+  btnName: 'button',
   color: 'orange',
   wide: false,
 };
 
 Button.propTypes = {
-  buttonName: PropTypes.string,
+  btnName: PropTypes.string,
   color: PropTypes.string,
   wide: PropTypes.bool,
 };

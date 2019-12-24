@@ -16,16 +16,17 @@ class App extends Component {
   }
 
   handleClick = (buttonName) => {
-    this.setState({
-      
-    })
+    // this.setState({ ...calculate(this.state, buttonName) });
+    console.log(buttonName);
   }
 
   render() {
+    const { total, next } = this.state;
+    const displayVal = total ? (next ? next.toString() : total.toString()) : '0';
     return (
       <div id="container" className="calculator">
-        <Display result="0" />
-        <ButtonPanel />
+        <Display result={displayVal} />
+        <ButtonPanel clickHandler={this.handleClick} />
       </div>
     );
   }

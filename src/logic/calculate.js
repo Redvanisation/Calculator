@@ -3,18 +3,18 @@ import operate from './operate';
 const calculate = (calData, buttonName) => {
   let { total, next, operation } = calData;
   let result;
-  let states = { total, next, operation };
 
   switch (buttonName) {
     case '+/-':
       total = -total;
       next = -next;
       operation = buttonName;
-      states = { total, next, operation };
-      return states;
+      return { total, next, operation };
     case 'AC':
-      total = 0;
-      return total;
+      total = null;
+      next = null;
+      operation = null;
+      return { total, next, operation };
     case '.':
       if (next) {
         result = [total, '.', next].join('');
@@ -25,7 +25,7 @@ const calculate = (calData, buttonName) => {
       result = operate(total, next, operation);
       return result;
   }
-  return states;
+  return calData;
 };
 
 
