@@ -1,5 +1,9 @@
+/* eslint-disable consistent-return */
+/* eslint-disable no-fallthrough */
 /* eslint-disable no-unused-vars */
 /* eslint-disable default-case */
+import operate from './operate';
+
 const calculate = (calData, buttonName) => {
   let { total, next, operation } = calData;
 
@@ -17,6 +21,8 @@ const calculate = (calData, buttonName) => {
         total = [total, '.', next].join('');
         break;
       }
+    default:
+      return operate(total, next, operation);
   }
 };
 
