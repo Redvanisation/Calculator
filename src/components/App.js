@@ -1,4 +1,5 @@
-/* eslint-disable no-unused-vars */
+/* eslint-disable react/no-unused-state */
+/* eslint-disable arrow-parens */
 import React, { Component } from 'react';
 import Display from './Display';
 import ButtonPanel from './ButtonPanel';
@@ -6,26 +7,26 @@ import calculate from '../logic/calculate';
 
 
 class App extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
+
     this.state = {
       total: null,
       next: null,
       operation: null,
+      calculated: false,
     };
   }
 
   handleClick = (buttonName) => {
-    // this.setState({ ...calculate(this.state, buttonName) });
-    console.log(buttonName);
+    this.setState(prevState => calculate(prevState, buttonName));
   }
 
   render() {
     const { total, next } = this.state;
-    const displayVal = total ? (next ? next.toString() : total.toString()) : '0';
     return (
       <div id="container" className="calculator">
-        <Display result={displayVal} />
+        <Display result={next || total} />
         <ButtonPanel clickHandler={this.handleClick} />
       </div>
     );

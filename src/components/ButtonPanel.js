@@ -1,20 +1,17 @@
 /* eslint-disable arrow-parens */
+/* eslint-disable react/require-default-props */
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Button from './Button';
 
-const values = [['AC', '+/-', '%', '/'], ['7', '8', '9', 'X'],
+const values = [['AC', '+/-', '%', '÷'], ['7', '8', '9', 'x'],
   ['4', '5', '6', '-'],
   ['1', '2', '3', '+'],
   ['0', '.', '=']];
 
 
 class ButtonPanel extends Component {
-  constructor(props) {
-    super(props);
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  handleClick(buttonName) {
+  handleClick = (buttonName) => {
     const { clickHandler } = this.props;
     return clickHandler(buttonName);
   }
@@ -31,7 +28,7 @@ class ButtonPanel extends Component {
                   btnName={val}
                   color={value.indexOf(val) === value.length - 1 ? 'orange' : 'gray'}
                   wide={val === '0'}
-                  clickHandler={() => this.handleClick(val)}
+                  clickHandler={this.handleClick}
                 />
               ))}
             </div>
@@ -41,5 +38,9 @@ class ButtonPanel extends Component {
     );
   }
 }
+
+ButtonPanel.propTypes = {
+  clickHandler: PropTypes.func,
+};
 
 export default ButtonPanel;

@@ -1,29 +1,33 @@
-import React from 'react';
+/* eslint-disable react/require-default-props */
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-const Button = ({ btnName = 'Button', color, wide, clickHandler, buttonName }) => {
-  let theClass = 'calculator__button';
-  if (color !== 'orange') {
-    theClass = 'calculator__button button-gray';
-  }
-  if (wide) {
-    theClass = 'calculator__button button-gray zero';
-  }
-  const handleClick = (buttonName) => {
-    clickHandler(buttonName);
-    // console.log(buttonName);
+class Button extends Component {
+  handleClick = () => {
+    const { clickHandler, btnName } = this.props;
+    clickHandler(btnName);
   };
 
-  return (
-    <button
-      type="button"
-      className={theClass}
-      onClick={handleClick}
-    >
-      {btnName}
-    </button>
-  );
-};
+  render() {
+    const { btnName, wide, color } = this.props;
+    let theClass = 'calculator__button';
+    if (color !== 'orange') {
+      theClass = 'calculator__button button-gray';
+    }
+    if (wide) {
+      theClass = 'calculator__button button-gray zero';
+    }
+    return (
+      <button
+        type="button"
+        className={theClass}
+        onClick={this.handleClick}
+      >
+        {btnName}
+      </button>
+    );
+  }
+}
 
 Button.defaultProps = {
   btnName: 'button',
@@ -35,6 +39,7 @@ Button.propTypes = {
   btnName: PropTypes.string,
   color: PropTypes.string,
   wide: PropTypes.bool,
+  clickHandler: PropTypes.func,
 };
 
 export default Button;
