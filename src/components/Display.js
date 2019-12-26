@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 
-const Display = ({ result = '0' }) => (
+const Display = ({ result }) => (
   <p className="calculator__display">
     <span className="calculator__display--result">{result}</span>
   </p>
